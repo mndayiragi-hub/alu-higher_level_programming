@@ -1,0 +1,3 @@
+def copy_list(l):
+    """Return a copy of a list"""
+    return l[:]
