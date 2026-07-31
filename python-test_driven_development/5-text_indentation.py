@@ -15,12 +15,10 @@ def text_indentation(text):
         raise TypeError("text must be a string")
 
     result = ""
-    i = 0
     for char in text:
         if char == " " and (len(result) == 0 or result[-1] == "\n"):
             continue
         result += char
         if char in ".?:":
             result += "\n\n"
-            i += 1
-    print(result.strip())
+    print(result.strip(), end="")
