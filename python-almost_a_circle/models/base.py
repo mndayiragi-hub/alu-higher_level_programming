@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 """Module that defines the Base class"""
 
+import json
+
 
 class Base:
     """Base class that manages the id attribute for all future classes"""
@@ -18,3 +20,10 @@ class Base:
         else:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
+
+    @staticmethod
+    def to_json_string(list_dictionaries):
+        """Returns the JSON string representation of list_dictionaries."""
+        if list_dictionaries is None or list_dictionaries == []:
+            return "[]"
+        return json.dumps(list_dictionaries)
